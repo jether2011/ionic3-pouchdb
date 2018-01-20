@@ -40,3 +40,6 @@ http://couchdb.apache.org/
 
 - pouchdb find
      `sudo npm install pouchdb-find --save`
+     
+ # Prepare CouchDB server on cloud server
+      https://www.digitalocean.com/community/tutorials/how-to-install-couchdb-and-futon-on-ubuntu-14-04
