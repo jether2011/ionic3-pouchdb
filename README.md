@@ -1,46 +1,42 @@
-The used OS to develop was Linux.
+Linux was used to create this tutorial.
 
-# ionic3-pouchdb
+# Ionic3Pouchdb
 
 http://couchdb.apache.org/
 
 # Debian/Ubuntu install
-First, install the repository key
-´´´
-curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc \
-    | sudo apt-key add -
-´´´
-´´´
-sudo apt-get update && sudo apt-get install couchdb
-´´´
-Verify the isntalltion
+   First, install the repository key to install couchdb
 
-´´´
-sudo service couchdb status
-sudo service couchdb start
-sudo service couchdb stop
-´´´
+    curl -L https://couchdb.apache.org/repo/bintray-pubkey.asc \
+        | sudo apt-key add -
+        
+    sudo apt-get update && sudo apt-get install couchdb
 
-# database access
-´´´
-http://127.0.0.1:5984/_utils/
-´´´
 
-# node install
+  Verify the instalation
 
-# ionic install
+    sudo service couchdb status
+    sudo service couchdb start
+    sudo service couchdb stop
 
-# create ionic project
-ionic start tab {project_name}
+# Database access
+ http://127.0.0.1:5984/_utils/
+
+# Node install
+
+# Ionic install
+
+# Create ionic project
+- ionic start tab {project_name}
 
 - Install pouchDB (https://pouchdb.com/)
-npm install pouchdb --save
+    `npm install pouchdb --save`
 
 - CORS configure
-sudo npm install -g add-cors-to-couchdb
+    `sudo npm install -g add-cors-to-couchdb`
 
 - Create Provider
-ionic generate provider "NomeProvider"
+    `ionic generate provider "NomeProvider"`
 
 - pouchdb find
-sudo npm install pouchdb-find --save
+     `sudo npm install pouchdb-find --save`
