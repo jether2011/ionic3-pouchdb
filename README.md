@@ -56,7 +56,7 @@ http://couchdb.apache.org/
    - save the file;
    - sudo service crouchdb stop;
    - sudo service crouchdb start;
-   - access `http://{cloud_external_ip}:8888/_utils/fauxton/#/database/`
+   - access `http://{cloud_external_ip}:8888/_utils/fauxton/#/database/`;
  
  # Add geolocation in the app
    - https://ionicframework.com/docs/native/geolocation/
