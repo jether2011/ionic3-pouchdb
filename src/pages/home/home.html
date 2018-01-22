@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      User
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Age</ion-label>
+    <ion-input type="number" [(ngModel)]="user.age" name="age"></ion-input>
+  </ion-item>
+  <button ion-button round (click)="saveUser()">Save</button>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        NAME
+      </ion-col>
+      <ion-col>
+        AGE
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let u of users">
+      <ion-col>
+        {{u.name}}
+      </ion-col>
+      <ion-col>
+        {{u.age}}
+      </ion-col>
+      <ion-col>
+        <button (click)="edit(u)" ><ion-icon name="ion-edit"></ion-icon></button>
+      </ion-col>
+      <ion-col>
+        <button (click)="delete(u)" ><ion-icon name="ion-close-circled"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
