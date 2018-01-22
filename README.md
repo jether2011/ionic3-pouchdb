@@ -2,7 +2,9 @@ Linux was used to create this tutorial.
 
 # Ionic3Pouchdb
 
-http://couchdb.apache.org/
+http://couchdb.apache.org/;
+
+- If your enviroment is already prepare to Ionic, just clone this repository and inside it execute: `npm i` so, npm will install all necessity present in the package.json file.
 
 # Debian/Ubuntu install
    First, install the repository key to install couchdb
