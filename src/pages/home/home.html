@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      User
+      User Home
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,8 +15,15 @@
     <ion-label>Age</ion-label>
     <ion-input type="number" [(ngModel)]="user.age" name="age"></ion-input>
   </ion-item>
-  <button ion-button round (click)="saveUser()">Save</button>
-
+  <ion-item>
+    <button ion-button icon-only (click)="uploadImagem()">
+      <ion-icon name="cloud-upload"></ion-icon>
+    </button>
+  </ion-item>
+  <ion-item *ngIf="user.picture != ''">
+    <img width="80" height="80" [src]="user.picture"/>
+  </ion-item>
+  <button ion-button full (click)="saveUser()">Save</button>
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -36,10 +43,14 @@
         {{u.age}}
       </ion-col>
       <ion-col>
-        <button (click)="edit(u)" ><ion-icon name="ion-edit"></ion-icon></button>
+        <button (click)="edit(u)" ion-button icon-only >
+          <ion-icon name="ion-edit"></ion-icon>
+        </button>
       </ion-col>
       <ion-col>
-        <button (click)="delete(u)" ><ion-icon name="ion-close-circled"></ion-icon></button>
+        <button (click)="delete(u)" ion-button icon-only >
+          <ion-icon name="ion-close-circled"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
   </ion-grid>

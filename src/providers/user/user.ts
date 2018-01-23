@@ -18,8 +18,9 @@ export class UserProvider {
   public remote:any;
 
   constructor() {
-    this.db = new PouchDB('ionic-course');
-    this.remote = 'http://localhost:5984/ionic-course';
+    this.db = new PouchDB('user');
+    //this.remote = 'http://localhost:5984/ionic-course';
+    this.remote = 'http://35.226.143.118:8888/ionic-course';
     
     let options = {
       live:true,
