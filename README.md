@@ -44,8 +44,8 @@ http://couchdb.apache.org/;
      `sudo npm install pouchdb-find --save`
      
 - Run ionic app
-    - `ionic serve -l` (to run as a webapp)
-    - `ionic cordova run browser` (to run simulating with plugins using cordova.js)
+    - `ionic serve -l` (to run as a webapp);
+    - `ionic cordova run browser` (to run simulating with plugins using cordova.js);
     
  # Prepare CouchDB server on cloud server
       https://www.digitalocean.com/community/tutorials/how-to-install-couchdb-and-futon-on-ubuntu-14-04
