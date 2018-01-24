@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content padding>
+  
   <ion-item>
     <ion-label stacked>name</ion-label>
     <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
@@ -23,7 +24,7 @@
   <ion-item *ngIf="user.picture != ''">
     <img width="80" height="80" [src]="user.picture"/>
   </ion-item>
-  <button ion-button full (click)="saveUser()">Save</button>
+  <button ion-button full type="submit" (click)="saveUser()">Save</button>
 
   <ion-list *ngFor="let u of users">
     <ion-item-sliding>
