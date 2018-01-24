@@ -8,51 +8,41 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label>Name</ion-label>
+    <ion-label stacked>name</ion-label>
     <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Age</ion-label>
+    <ion-label stacked>age</ion-label>
     <ion-input type="number" [(ngModel)]="user.age" name="age"></ion-input>
   </ion-item>
   <ion-item>
-    <button ion-button icon-only (click)="uploadImagem()">
-      <ion-icon name="cloud-upload"></ion-icon>
+    <button ion-button small outline item-end (click)="uploadImagem()">
+      <ion-icon name="camera"></ion-icon>
     </button>
   </ion-item>
   <ion-item *ngIf="user.picture != ''">
     <img width="80" height="80" [src]="user.picture"/>
   </ion-item>
   <button ion-button full (click)="saveUser()">Save</button>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        NAME
-      </ion-col>
-      <ion-col>
-        AGE
-      </ion-col>
-      <ion-col></ion-col>
-      <ion-col></ion-col>
-    </ion-row>
-    <ion-row *ngFor="let u of users">
-      <ion-col>
-        {{u.name}}
-      </ion-col>
-      <ion-col>
-        {{u.age}}
-      </ion-col>
-      <ion-col>
-        <button (click)="edit(u)" ion-button icon-only >
-          <ion-icon name="ion-edit"></ion-icon>
+
+  <ion-list *ngFor="let u of users">
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{ u.picture }}">
+        </ion-avatar>
+        <h2>Name: {{u.name}}</h2>
+        <p>Age: {{u.age}}</p>
+      </ion-item>
+      <ion-item-options side="rigth">
+        <button ion-button icon-only color="primary" (click)="edit(u)">
+            <ion-icon name="refresh-circle"></ion-icon>
         </button>
-      </ion-col>
-      <ion-col>
-        <button (click)="delete(u)" ion-button icon-only >
-          <ion-icon name="ion-close-circled"></ion-icon>
+        <button ion-button icon-only color="secondary" (click)="delete(u)">
+            <ion-icon name="remove-circle"></ion-icon>
         </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
 </ion-content>

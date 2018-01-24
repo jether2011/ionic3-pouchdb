@@ -47,13 +47,15 @@ export class HomePage {
   public saveUser() {
     this.geolocation.getCurrentPosition().then((resp) => {      
       this.user.latitude = resp.coords.latitude;
-      this.user.longitude = resp.coords.longitude;      
+      this.user.longitude = resp.coords.longitude;   
+      this.userProvider.createUser(this.user);   
       this.dialog.alert('User created!');
      }).catch((error) => {
        console.log('Error getting location', error);
      });
 
-     this.userProvider.createUser(this.user);
+     this.user = new User();
+     
   };
 
   public uploadImagem(){    
@@ -65,5 +67,4 @@ export class HomePage {
       console.log(err);
     });
   }
-
 }

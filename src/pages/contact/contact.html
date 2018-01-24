@@ -1,18 +1,31 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Users
+      Users List
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-input [(ngModel)]="inputSearch" (ngModelChange)="searchUser($event)"></ion-input>
-  <ion-list *ngFor="let u of users">
-    <!-- <ion-list-header>Users into database</ion-list-header> -->
+  <ion-searchbar [(ngModel)]="inputSearch" (ngModelChange)="searchUser($event)"></ion-searchbar>
+  
+  <!-- <ion-list *ngFor="let u of users">
     <ion-item>
         <ion-icon name="contact"></ion-icon>
       {{u.name}} - {{u.age}}      
     </ion-item>
+  </ion-list> -->
+
+  <ion-list *ngFor="let u of users">
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{ u.picture }}">
+        </ion-avatar>
+        <h2>Name: {{u.name}}</h2>
+        <p>Age: {{u.age}}</p>
+      </ion-item>
+    </ion-item-sliding>
   </ion-list>
+
 </ion-content>
