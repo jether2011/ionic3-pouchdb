@@ -7,7 +7,15 @@
 </ion-header>
 
 <ion-content padding>
-  
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Reload.....">
+    </ion-refresher-content>
+  </ion-refresher>
+
   <ion-item>
     <ion-label stacked>name</ion-label>
     <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>

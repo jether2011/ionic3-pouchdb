@@ -77,4 +77,14 @@ export class HomePage {
       console.log(err);
     });
   }
+
+  public doRefresh(refresher) {
+    //console.log('Begin async operation', refresher);
+    this.loadUsers();
+    
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 1000);
+  }
 }

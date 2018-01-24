@@ -10,12 +10,26 @@ export class ContactPage {
   public users:any;
 
   constructor(public navCtrl: NavController, public userProvider: UserProvider) {
-    this.userProvider.getUsers().then((data)=>{
-      this.users = data;
-    })
+    this.loadUsers();
   }
 
   public searchUser(event) {
     this.userProvider.searchUser(event).then(result => this.users = result.docs);
+  }
+
+  public loadUsers(){
+    this.userProvider.getUsers().then((data)=>{
+      this.users = data;
+    });
+  }
+
+  public doRefresh(refresher) {
+    //console.log('Begin async operation', refresher);
+    this.loadUsers();
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 1000);
   }
 }
