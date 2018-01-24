@@ -46,7 +46,10 @@ http://couchdb.apache.org/;
 - Run ionic app
     - `ionic serve -l` (to run as a webapp);
     - `ionic cordova run browser` (to run simulating with plugins using cordova.js);
-    
+- Add android (ou iOS) - Necessário ter o Android SDK, XCode e Gradle instalado para poder criar os arquivos de instalação nessas plataformas
+    - `cordova platform add android`;
+    - `cordova build android`
+    
  # Prepare CouchDB server on cloud server
       https://www.digitalocean.com/community/tutorials/how-to-install-couchdb-and-futon-on-ubuntu-14-04
  
